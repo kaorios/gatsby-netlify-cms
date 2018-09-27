@@ -23,7 +23,7 @@ export default class IndexPage extends React.Component {
                   key={post.id}
                 >
                   <p>
-                    <Link className="has-text-primary" to={post.fields.slug}>
+                    <Link className="has-text-primary" to={post.frontmatter.path}>
                       {post.frontmatter.title}
                     </Link>
                     <span> &bull; </span>
@@ -33,7 +33,7 @@ export default class IndexPage extends React.Component {
                     {post.excerpt}
                     <br />
                     <br />
-                    <Link className="button is-small" to={post.fields.slug}>
+                    <Link className="button is-small" to={post.frontmatter.path}>
                       Keep Reading →
                     </Link>
                   </p>
@@ -64,13 +64,11 @@ export const pageQuery = graphql`
         node {
           excerpt(pruneLength: 400)
           id
-          fields {
-            slug
-          }
           frontmatter {
             title
             templateKey
             date(formatString: "MMMM DD, YYYY")
+            path
           }
         }
       }
