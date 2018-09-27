@@ -3,10 +3,18 @@ import Helmet from 'react-helmet'
 
 import Navbar from '../components/Navbar'
 import './all.sass'
+import favicon from '../img/favicon.ico'
+import appleTouchIcon from '../img/apple-touch-icon.png'
 
 const TemplateWrapper = ({ children }) => (
   <div>
-    <Helmet title="CSS Memo" />
+    <Helmet
+        title="CSS Memo"
+        link={[
+          { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` },
+          { rel: 'apple-touch-icon', type: 'image/png', href: `${appleTouchIcon}` },
+        ]}
+    />
     <Navbar />
     <div>{children}</div>
     <footer className="footer">
