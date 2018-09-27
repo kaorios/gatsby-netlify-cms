@@ -22,6 +22,7 @@ export default class IndexPage extends React.Component {
                   style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
                   key={post.id}
                 >
+                  {post.frontmatter.image ? <img src={post.frontmatter.image} alt=""/> : ''}
                   <p>
                     <Link className="has-text-primary" to={post.frontmatter.path}>
                       {post.frontmatter.title}
@@ -69,6 +70,7 @@ export const pageQuery = graphql`
             templateKey
             date(formatString: "MMMM DD, YYYY")
             path
+            image
           }
         }
       }
