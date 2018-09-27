@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import {kebabCase} from "lodash";
 
 export default class IndexPage extends React.Component {
   render() {
@@ -13,18 +14,19 @@ export default class IndexPage extends React.Component {
         <section className="section">
           <div className="container">
             <div className="content">
-              <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
+              <h1 style={{marginBottom: '5rem', textAlign: 'center'}}>CSS Design Memo</h1>
             </div>
+            <div className="columns" style={{ flexWrap: 'wrap'}}>
             {posts
               .map(({ node: post }) => (
+                <div className="column is-one-third">
                 <div
                   className="content"
-                  style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
                   key={post.id}
                 >
                   {post.frontmatter.image ? <img src={post.frontmatter.image} alt=""/> : ''}
-                  <p>
-                    <Link className="has-text-primary" to={post.frontmatter.path}>
+                  <p style={{marginTop: '1rem'}}>
+                    <Link className="has-text-black has-text-weight-bold" to={post.frontmatter.path}>
                       {post.frontmatter.title}
                     </Link>
                     <span> &bull; </span>
@@ -38,8 +40,17 @@ export default class IndexPage extends React.Component {
                       Keep Reading →
                     </Link>
                   </p>
+                  <ul className="taglist">
+                    {post.frontmatter.tags.map(tag => (
+                        <li key={tag + `tag`}>
+                          <Link to={`/tags/${kebabCase(tag)}/`}><span className="tag is-primary">{tag}</span></Link>
+                        </li>
+                    ))}
+                  </ul>
+                </div>
                 </div>
               ))}
+            </div>
           </div>
         </section>
       </Layout>
@@ -69,6 +80,7 @@ export const pageQuery = graphql`
             title
             templateKey
             date(formatString: "MMMM DD, YYYY")
+            tags
             path
             image
           }

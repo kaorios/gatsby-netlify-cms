@@ -5,21 +5,20 @@ import codepen from '../img/codepen-icon.svg'
 import logo from '../img/logo.svg'
 
 const Navbar = () => (
-  <nav className="navbar is-transparent">
+  <nav className="navbar is-transparent has-shadow is-spaced">
     <div className="container">
       <div className="navbar-brand">
         <Link to="/" className="navbar-item">
           <figure className="image">
             <img src={logo} alt="suige" style={{ width: '30px' }} />
           </figure>
+          <span className="has-text-weight-bold">CSSMemo</span>
         </Link>
-      </div>
-      <div className="navbar-end">
         <a
-          className="navbar-item"
-          href="https://codepen.io/suige/"
-          target="_blank"
-          rel="noopener noreferrer"
+            className="navbar-item"
+            href="https://codepen.io/suige/"
+            target="_blank"
+            rel="noopener noreferrer"
         >
           <span className="icon">
             <img src={codepen} alt="Codepen" />
