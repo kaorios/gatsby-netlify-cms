@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 path: form-animation-css
-title: 【CSSだけ】Formのラベルを動かす
+title: CSSだけでFormのラベルを動かす
 image: /img/floatlabelform.gif
 date: 2018-09-28T05:53:16.397Z
 description: |-
