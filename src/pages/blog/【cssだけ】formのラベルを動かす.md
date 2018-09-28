@@ -11,5 +11,5 @@ tags:
   - Form
   - Animation
 ---
-<p data-height="265" data-theme-id="0" data-slug-hash="rqNeJB" data-default-tab="css,result" data-user="suige" data-pen-title="Float Labels Form Animation Only CSS" class="codepen">See the Pen <a href="https://codepen.io/suige/pen/rqNeJB/">Float Labels Form Animation Only CSS</a> by suige (<a href="https://codepen.io/suige">@suige</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<iframe height='265' scrolling='no' title='Float Labels Form Animation Only CSS' src='//codepen.io/suige/embed/rqNeJB/?height=265&theme-id=0&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/suige/pen/rqNeJB/'>Float Labels Form Animation Only CSS</a> by suige (<a href='https://codepen.io/suige'>@suige</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
